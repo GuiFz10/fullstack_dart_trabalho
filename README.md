@@ -42,7 +42,7 @@ dart run bin/server.dart
 
 ### URL base
 ```bash
-http://localhost:8080
+http://localhost:8081
 ```
 
 ### Rotas da API
