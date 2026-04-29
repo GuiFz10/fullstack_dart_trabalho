@@ -91,7 +91,7 @@ flutter pub get
 flutter run
 ```
 
-> Observação: no emulador Android, a URL base usada foi `http://10.0.2.2:8080`.
+> Observação: no emulador Android, a URL base usada foi `http://10.0.2.2:8081`.
 
 ---
 
