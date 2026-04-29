@@ -73,7 +73,7 @@ postman/collection.json
 A variável `{{base_url}}` já está configurada para:
 
 ```bash
-http://localhost:8080
+http://localhost:8081
 ```
 
 ---
