@@ -65,7 +65,11 @@
     },
     {
       "name": "meta",
+<<<<<<< HEAD
       "version": "1.18.3",
+=======
+      "version": "1.18.2",
+>>>>>>> 0f7cb39cec3d424044d8770e35902d09c89c5896
       "dependencies": []
     },
     {

@@ -33,7 +33,11 @@
     },
     {
       "name": "meta",
+<<<<<<< HEAD
       "rootUri": "file:///C:/Users/FRANCIOSI/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.18.3",
+=======
+      "rootUri": "file:///C:/Users/FRANCIOSI/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.18.2",
+>>>>>>> 0f7cb39cec3d424044d8770e35902d09c89c5896
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
