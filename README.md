@@ -1,117 +1,133 @@
-# Trabalho Prático — Full Stack com Dart
+# Trabalho Prático — Flutter CRUD Completo
 
-Projeto individual da disciplina de **Tópicos Especiais**.
+Projeto desenvolvido para a disciplina de **Tópicos Especiais**.
 
-## Tema escolhido
+## Tema do projeto
 **Biblioteca**
 
-### Entidades
-- **Autor** (entidade pai)
-- **Livro** (entidade filho)
+## Descrição
+Este trabalho consiste em uma aplicação fullstack com:
 
-### Relacionamento
-Um **autor** pode ter **vários livros** (`1:N`).
+- **Backend** em Dart + Shelf
+- **Frontend** em Flutter
+- **Banco de dados** SQLite
+- **Postman** para testes dos endpoints
 
----
+O projeto evolui a versão anterior, que possuía apenas uma tela de listagem, para uma versão com **CRUD completo** no app Flutter.
 
-## Estrutura do repositório
+## Funcionalidades do app
+O aplicativo permite:
 
-```bash
+- listar livros cadastrados
+- visualizar o detalhe de um livro
+- criar um novo livro
+- editar um livro existente
+- excluir um livro com confirmação
+
+## Entidades
+### Autor
+- id
+- nome
+- nacionalidade
+
+### Livro
+- id
+- título
+- ano
+- autorId
+
+## Estrutura do projeto
+
+```text
 fullstack_dart_trabalho/
 ├── backend/
 ├── frontend/
 ├── postman/
-├── arquitetura/
+├── docs/
 └── README.md
-```
+Estrutura do frontend
+frontend/lib/
+├── models/
+│   ├── autor.dart
+│   └── livro.dart
+├── services/
+│   ├── autor_service.dart
+│   └── livro_service.dart
+├── screens/
+│   ├── lista_page.dart
+│   ├── detalhe_page.dart
+│   └── formulario_page.dart
+├── app_config.dart
+└── main.dart
+Tecnologias utilizadas
+Backend
+Dart
+Shelf
+Shelf Router
+SQLite
+Frontend
+Flutter
+Dart
+pacote http
+Testes
+Postman
+Como rodar o backend
 
----
+Abra o terminal na pasta backend e execute:
 
-## Backend
-API REST desenvolvida com **Dart + Shelf + SQLite**.
-
-### Como instalar dependências
-```bash
+cd backend
 dart pub get
-```
-
-### Como rodar o servidor
-```bash
 dart run bin/server.dart
-```
 
-### URL base
-```bash
+A API ficará disponível em:
+
 http://localhost:8081
-```
+Como rodar o frontend
 
-### Rotas da API
-#### Autores
-- `GET /autores`
-- `GET /autores/:id`
-- `POST /autores`
-- `PUT /autores/:id`
-- `DELETE /autores/:id`
+Abra outro terminal na pasta frontend e execute:
 
-#### Livros
-- `GET /livros`
-- `GET /livros/:id`
-- `GET /autores/:id/livros`
-- `POST /livros`
-- `PUT /livros/:id`
-- `DELETE /livros/:id`
-
----
-
-## Postman
-A coleção exportada está em:
-
-```bash
-postman/collection.json
-```
-
-A variável `{{base_url}}` já está configurada para:
-
-```bash
-http://localhost:8081
-```
-
----
-
-## Frontend Flutter
-Tela simples de listagem da entidade filha (**livros**), usando o pacote `http`.
-
-### Como instalar dependências
-```bash
+cd frontend
 flutter pub get
-```
+flutter run -d chrome
+URL base da API
 
-### Como rodar o app Flutter
-```bash
-flutter run
-```
+A URL base utilizada no frontend está em:
 
-> Observação: no emulador Android, a URL base usada foi `http://10.0.2.2:8081`.
+frontend/lib/app_config.dart
 
----
+Base configurada:
 
-## Arquitetura
-A apresentação da arquitetura está em:
+http://localhost:8081
+Rotas principais da API
+Autores
+GET /autores
+GET /autores/:id
+POST /autores
+PUT /autores/:id
+DELETE /autores/:id
+Livros
+GET /livros
+GET /livros/:id
+GET /autores/:id/livros
+POST /livros
+PUT /livros/:id
+DELETE /livros/:id
+Diagrama
 
-```bash
-arquitetura/apresentacao_arquitetura.md
-```
+O diagrama de navegação e arquitetura está disponível na pasta:
 
----
+docs/
+Postman
 
-## Status HTTP utilizados
-- `200 OK`
-- `201 Created`
-- `204 No Content`
-- `400 Bad Request`
-- `404 Not Found`
+A coleção utilizada para testar a API está na pasta:
 
----
-
-## Observações finais
-O projeto segue o requisito de duas entidades com relacionamento `1:N`, respostas em JSON, uso de POO com classes e `toJson()`, coleção Postman organizada e tela Flutter consumindo a própria API.
+postman/collection.json
+Evolução do projeto
+Versão anterior
+tela de listagem conectada à API
+Versão atual
+listagem
+detalhe
+criação
+edição
+exclusão com confirmação
